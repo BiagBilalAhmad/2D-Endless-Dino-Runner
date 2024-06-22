@@ -29,9 +29,8 @@ public class PlayerController : MonoBehaviour
 
 
             // Check for jump input and if the player is on the ground
-            if ((Input.GetKeyDown(KeyCode.UpArrow) /*|| Input.GetButtonDown("Jump"))*/ && isGrounded))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-
                 Jump();
             }
             if(Input.GetKeyDown(KeyCode.DownArrow))
@@ -45,13 +44,14 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    void Jump()
+    public void Jump()
     {
-        SoundManager.Instance.PlayMoveSound();
-        // Apply a vertical force to make the player jump
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
-   
+        if(isGrounded)
+        {
+            SoundManager.Instance.PlayMoveSound();
+            // Apply a vertical force to make the player jump
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
     }
 
     public void Slide()
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             SoundManager.Instance.PlayCoinSound();
             GameManager.Instance.UpdateScore();
 
-            Debug.Log("Score");
+            Destroy(collision.gameObject);
         }
     }
 

@@ -17,7 +17,8 @@ public class HighScoreManager : MonoBehaviour
     private List<HighScoreEntry> highScoreEntryList;
     private List<Transform> highScoreEntryTransformList;
 
-    private void Start()
+
+    public void Start()
     {
         entryContainer = transform.Find("HighScoreContainer");
         entryTemplate = entryContainer.Find("ScoreTemplate");
