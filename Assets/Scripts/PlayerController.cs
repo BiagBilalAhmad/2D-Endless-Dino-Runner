@@ -10,9 +10,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
-
-
+    public bool isGrounded;
 
     public Collider2D slideCollider, capsuleCollider;
     void Start()
@@ -27,7 +25,6 @@ public class PlayerController : MonoBehaviour
             // Check if the player is grounded
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
 
-
             // Check for jump input and if the player is on the ground
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -39,9 +36,36 @@ public class PlayerController : MonoBehaviour
             }
 
             // Update animator parameters based on the player's state
-            animator.SetBool("IsGrounded", isGrounded);
+            //animator.SetBool("IsGrounded", isGrounded);
+            UpdateAnimations();
         }
        
+    }
+
+    void UpdateAnimations()
+    {
+        animator.SetBool("IsRunning", false);
+        animator.SetBool("IsJumping", false);
+        animator.SetBool("IsFalling", false);
+
+        if(isGrounded)
+        {
+            animator.SetBool("IsRunning", true);
+            return;
+        }
+
+        if (!isGrounded)
+        {
+            if (rb.velocity.y > 0)
+            {
+                animator.SetBool("IsJumping", true);
+            }
+            else
+            {
+
+                animator.SetBool("IsFalling", true);
+            }
+        }
     }
 
     public void Jump()
@@ -88,6 +112,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator GameOver()
     {
+        SoundManager.Instance.PlayGameOverSound();
         yield return new WaitForSeconds(0.5f);
         GameManager.Instance.ShowGameOver();
     }

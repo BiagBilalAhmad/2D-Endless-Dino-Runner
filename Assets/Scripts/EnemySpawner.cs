@@ -51,7 +51,5 @@ public class EnemySpawner : MonoBehaviour
     {
         // Decrease the spawn rate (but not below the minimum)
         currentSpawnRate = Mathf.Max(minSpawnRate, currentSpawnRate - spawnRateDecrease);
-
-      
     }
 }
