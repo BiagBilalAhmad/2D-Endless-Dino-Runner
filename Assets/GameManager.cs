@@ -66,7 +66,10 @@ public class GameManager : MonoBehaviour
 
     public void AddToLeaderBoard()
     {
-        HighScoreManager.Instance.AddHighScoreEntry(nameInput.text, score);
+        if(nameInput.text.Length > 0)
+        {
+            HighScoreManager.Instance.AddHighScoreEntry(nameInput.text, score);
+        }
     }
 
     public void ShowLeaderboard()
