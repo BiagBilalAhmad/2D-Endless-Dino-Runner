@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.CompareTag("Score"))
         {
             SoundManager.Instance.PlayCoinSound();
-            GameManager.Instance.UpdateScore();
+            GameManager.Instance.UpdateScore(50);
 
             Destroy(collision.gameObject);
         }

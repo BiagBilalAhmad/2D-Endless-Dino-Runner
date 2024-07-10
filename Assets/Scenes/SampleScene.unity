@@ -8107,13 +8107,17 @@ MonoBehaviour:
   - {fileID: 2580178626314058169, guid: 6f63b04767139334cb2aeccb69499f6f, type: 3}
   - {fileID: 2580178626314058169, guid: 6d402673e3429d648b1483e37882ffba, type: 3}
   - {fileID: 2580178626314058169, guid: aa71487a75f82b444b043e3b8efbf8fe, type: 3}
+  - {fileID: 2580178626314058169, guid: b9b3f17cf00d35c4f89ce2f4d5451ec2, type: 3}
+  - {fileID: 2580178626314058169, guid: da119b2afd34e99418aea147ab6838ce, type: 3}
   spawnPoint:
   - {fileID: 512269305515066342, guid: 9e67ab7e0716f7c448e0d52898b4f688, type: 3}
   - {fileID: 512269305515066342, guid: 6f63b04767139334cb2aeccb69499f6f, type: 3}
   - {fileID: 512269305515066342, guid: 6d402673e3429d648b1483e37882ffba, type: 3}
   - {fileID: 512269305515066342, guid: aa71487a75f82b444b043e3b8efbf8fe, type: 3}
+  - {fileID: 512269305515066342, guid: b9b3f17cf00d35c4f89ce2f4d5451ec2, type: 3}
+  - {fileID: 512269305515066342, guid: da119b2afd34e99418aea147ab6838ce, type: 3}
   initialSpawnRate: 2
-  spawnRateDecrease: 0.1
+  spawnRateDecrease: 0.3
   minSpawnRate: 0.8
 --- !u!4 &1136212796
 Transform:

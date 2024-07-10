@@ -11,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
 
     private float currentSpawnRate;     // The current time between spawns
     private float timer;                // Timer to track when to spawn the next enemy
+    private float decTimer;                
+    private float decCount;                
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
         {
             // Update the timer
             timer += Time.deltaTime;
+            decTimer += Time.deltaTime;
 
             // Check if it's time to spawn a new enemy
             if (timer >= currentSpawnRate)
@@ -33,8 +36,11 @@ public class EnemySpawner : MonoBehaviour
                 // Reset the timer
                 timer = 0f;
 
-                // Call a method to handle decreasing the spawn rate
-               // DecreaseSpawnRate();
+                if ((decTimer > 30f && decCount < 1) || (decTimer > 60f && decCount < 2) || (decTimer > 90f && decCount < 3) || (decTimer > 120f && decCount < 4))
+                {
+                    DecreaseSpawnRate();
+                    decCount++;
+                }
             }
         }
       

@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         StartGame = true;
+        StartCoroutine(AddToScore());
     }
 
     public void RestartGame()
@@ -78,9 +79,44 @@ public class GameManager : MonoBehaviour
         leaderboardPanel.SetActive(true);
     }
 
-    public void UpdateScore()
+    public void UpdateScore(int points)
     {
-        score++;
+        score += points;
         ScoreTxt.text = "Score : " + score;
+    }
+
+    public IEnumerator AddToScore()
+    {
+        float timer = 0;
+        while (StartGame)
+        {
+            timer = Time.deltaTime;
+
+            if (timer < 30)
+            {
+                yield return new WaitForSeconds(0.2f);
+                UpdateScore(10);
+            }
+
+            if (timer < 60)
+            {
+                yield return new WaitForSeconds(0.15f);
+                UpdateScore(20);
+            }
+
+            if (timer < 90)
+            {
+                yield return new WaitForSeconds(0.15f);
+                UpdateScore(30);
+            }
+
+            if (timer > 120)
+            {
+                yield return new WaitForSeconds(0.1f);
+                UpdateScore(50);
+            }
+
+            yield return null;
+        }
     }
 }

@@ -24,7 +24,7 @@ public class ParalaxController : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if(Mathf.Abs(timer) > 10 && multiplierCount < 1)
+            if(Mathf.Abs(timer) > 30 && multiplierCount < 1)
             {
                 foreach (var item in parallaxBackgrounds)
                 {
