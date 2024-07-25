@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalXPosition: -9.03
-  moveSpeed: 5
+  moveSpeed: 0
 --- !u!1 &7094236750856255415
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalXPosition: -9.03
-  moveSpeed: 5
+  moveSpeed: 0
 --- !u!60 &6509252394582009632
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 127190793889875557}
   - component: {fileID: 6041583986767175067}
   - component: {fileID: 5500058087551280369}
-  - component: {fileID: 4318046345583727718}
+  - component: {fileID: 5047588192466620498}
   m_Layer: 6
   m_Name: OBSTACLE 1
   m_TagString: Untagged
@@ -349,7 +349,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.35142073, y: 0.057587113}
   m_Size: {x: 1.0671587, y: 1.6548256}
   m_Direction: 0
---- !u!114 &4318046345583727718
+--- !u!114 &5047588192466620498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,4 +362,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalXPosition: -9.03
-  moveSpeed: 5
+  moveSpeed: 0
